@@ -1,0 +1,29 @@
+  <div class="form-group categoria-select">
+    <div class="mb-3 row">
+      <select
+        class="form-select"
+        [(ngModel)]="selectedObject"
+        (ngModelChange)="onChange($event)"
+      >
+        <option [value]="item" *ngFor="let item of categorias" [ngValue]="item">
+          {{ item.descricao }}
+        </option>
+      </select>
+    </div>
+
+    <div class="mb-3 row">
+      <select
+        class="form-select"
+        [(ngModel)]="selectedSubCategoria"
+        (ngModelChange)="onChangeSubCategoria($event)"
+      >
+        <option
+          [value]="item"
+          *ngFor="let item of subCategorias"
+          [ngValue]="item"
+        >
+          {{ item.descricao }}
+        </option>
+      </select>
+    </div>
+  </div>
