@@ -22,6 +22,7 @@ export class CategoriaComponent implements OnInit {
   ngOnInit(): void {
     this.service.getCategorias().subscribe((cat) => {
       this.categorias = cat;
+      this.gridData = cat;
     });
   }
 
@@ -33,4 +34,13 @@ export class CategoriaComponent implements OnInit {
   onChangeSubCategoria(event: any) {
     console.log(this.selectedSubCategoria);
   }
+
+  gridData: Categoria[] = [];
+  isEdit: boolean=true;
+  colData=[
+    {field: 'id', header: 'Codigo'},
+    {field: 'descricao', header: 'Categoria'}
+  ];
+
+
 }

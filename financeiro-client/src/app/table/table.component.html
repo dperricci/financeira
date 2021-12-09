@@ -1,0 +1,18 @@
+<div class="table-responsive">
+  <table class="table table-bordered table-striped table-hover table-sucess">
+    <thead>
+      <tr>
+        <th (click)="sortedColumn = key.field" *ngFor="let key of ColData">
+          {{ key.header }}<i class="fa fa-arrow-up">x</i>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of GridData | orderBy: sortedColumn">
+        <td *ngFor="let key of ColData ">
+          <span>{{ record[key.field] }}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
